@@ -1,0 +1,106 @@
+<!-- main.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        label {
+            width: 30%;
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            width: 10%;
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Make Prediction</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- First row of input boxes -->
+            <label for="param1">Parameter 1:</label>
+            <input type="text" id="param1" name="param1">
+            <label for="param2">Parameter 2:</label>
+            <input type="text" id="param2" name="param2">
+            <label for="param3">Parameter 3:</label>
+            <input type="text" id="param3" name="param3"><br>
+            <!-- Second row of input boxes -->
+            <label for="param4">Parameter 4:</label>
+            <input type="text" id="param4" name="param4">
+            <label for="param5">Parameter 5:</label>
+            <input type="text" id="param5" name="param5">
+            <label for="param6">Parameter 6:</label>
+            <input type="text" id="param6" name="param6"><br>
+            <!-- Third row of input boxes -->
+            <label for="param7">Parameter 7:</label>
+            <input type="text" id="param7" name="param7">
+            <label for="param8">Parameter 8:</label>
+            <input type="text" id="param8" name="param8">
+            <label for="param9">Parameter 9:</label>
+            <input type="text" id="param9" name="param9"><br>
+            <!-- Fourth row of input boxes -->
+            <label for="param10">Parameter 10:</label>
+            <input type="text" id="param10" name="param10"><br>
+            <!-- Submit button -->
+            <button type="submit">Submit</button>
+        </form>
+        <!-- Display results -->
+        {% if result1 %}
+            <h2>Result 1: {{ result1 }}</h2>
+        {% endif %}
+        {% if result2 %}
+            <h2>Result 2: {{ result2 }}</h2>
+        {% endif %}
+        {% if result3 %}
+            <h2>Result 3: {{ result3 }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
